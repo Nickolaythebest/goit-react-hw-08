@@ -1,0 +1,44 @@
+.icons {
+    color: saddlebrown;
+    text-align: center;
+}
+.item {
+    display: flex;
+    gap: 5px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    border: solid 2px saddlebrown;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    
+}
+.buttonContact {
+    border-radius: 5px;
+    width: 80px;
+}
+.buttonContactIcon{
+    width: 40px;
+    border-radius: 5px;
+}
+.notesMain{
+    display: flex;
+    flex-direction: column;
+}
+.check{
+    position: absolute;
+    transform: translateY(150%);
+    width: 16px;
+    height: 16px;
+
+}
+.mainCont{
+    margin-left: 25px;
+}
+.herz{
+    position: absolute;
+}
