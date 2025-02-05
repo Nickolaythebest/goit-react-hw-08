@@ -4,13 +4,15 @@ import { Suspense } from 'react';
 
 function Layout(){
     return (
-      <Suspense>
+      
         <div>
        <AppBar />
+       <Suspense fallback={null}>
        <Outlet/>
-       </div>
        </Suspense>
+       </div>
        
+
     );
   }
   export default Layout;

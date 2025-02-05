@@ -43,7 +43,7 @@ export const loginThunk = createAsyncThunk('auth/login', async (credentials, thu
 export const logoutThunk = createAsyncThunk('auth/logout', async (__, thunkApi) => {
   try {
     const {data} = await goitApi.post('users/logout');
-   
+    setAuthHeader(data.token);
     return data;
   } catch (error) {
     console.log('Ошибка при загрузке контактов:', error.response?.data);

@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
 import './App.css';
-import ContactsPage from './pages/ContactsPage';
+
+import Loader from "./components/Loader/Loader.jsx";
 
 
 
@@ -16,7 +17,7 @@ import PublicRoute from "./components/PublicRoute.jsx";
 
 const HomePage = lazy(() => import('./pages/HomePage.jsx'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
-const Loader = lazy(() => import('./components/Loader/Loader.jsx'))
+const ContactsPage = lazy(() => import('./pages/ContactsPage'))
 const LoginPage = lazy(() => import('./pages/LoginPage.jsx'));
 const RegistrationPage = lazy(() => import('./pages/RegistrationPage.jsx'));
 
