@@ -14,7 +14,7 @@ function AppBar() {
       <header>
       <div className={s.container}>
         <Typography variant="h4" sx={{ fontWeight: "bold", color: "black", textAlign: "center", mb: 1 }}>
-        Make your contacts!
+        Make your contacts.
 </Typography>
 {isLoggedIn ? <UserMenu /> : <AuthNav /> }
 <Navigation />

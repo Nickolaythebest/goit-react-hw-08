@@ -41,7 +41,7 @@ function App() {
     <Route path="register" element={<PublicRoute><RegistrationPage /></PublicRoute>} />
     <Route path='*' element={<NotFoundPage />} />
   </Routes>
-  
+
   );
 };
 
