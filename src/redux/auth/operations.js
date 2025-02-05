@@ -12,12 +12,13 @@ export const setAuthHeader = token => {
   goitApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 export const clearAuthHeader = () => {
-  goitApi.defaults.headers.common.Authorization = '';
+  goitApi.defaults.headers.common.Authorization = ''
 };
 
 export const registerThunk = createAsyncThunk('auth/register', async (credentials, thunkApi) => {
     try {
        const { data } = await goitApi.post('users/signup', credentials);
+       console.log("Login response data:", data);
        setAuthHeader(data.token);
        return data; 
     } catch (error) {
@@ -34,6 +35,7 @@ export const registerThunk = createAsyncThunk('auth/register', async (credential
 export const loginThunk = createAsyncThunk('auth/login', async (credentials, thunkApi) => {
   try {
      const { data } = await goitApi.post('users/login', credentials);
+     console.log("Login response data:", data);
      setAuthHeader(data.token);
      return data; 
   } catch (error) {
