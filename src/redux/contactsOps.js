@@ -1,6 +1,6 @@
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { goitApi } from "./auth/operations";
+import { goitApi, setAuthHeader } from "./auth/operations";
 
 
 
@@ -20,13 +20,14 @@ import { goitApi } from "./auth/operations";
 }*/
 export const fetchContacts = createAsyncThunk('contacts/fetchAllContacts', async (_, thunkAPI) => {
     try {
-        const {data} = await goitApi.get('/contacts');
+        const {data} = await goitApi.get('contacts');
+        setAuthHeader(data.token);
         return data;
     } catch (error) {
         console.log('Ошибка при загрузке контактов:', error.response.data);
         return thunkAPI.rejectWithValue(error.message);
     }
-})
+});
 
 export const deleteContact = createAsyncThunk('contacts/deleteContact', async (id, thunkAPI) => {
     try {
@@ -36,7 +37,7 @@ export const deleteContact = createAsyncThunk('contacts/deleteContact', async (i
         console.log('Ошибка при загрузке контактов:', error.response?.data);
         return thunkAPI.rejectWithValue(error.message);
     }
-})
+});
 
 export const addContact = createAsyncThunk('contacts/addContact', async (body, thunkAPI) => {
     try {
@@ -46,7 +47,7 @@ export const addContact = createAsyncThunk('contacts/addContact', async (body, t
         console.log('Ошибка при загрузке контактов:', error.response?.data);
         return thunkAPI.rejectWithValue(error.message);
     }
-})
+});
 
 export const editContactThunk = createAsyncThunk(
     'contacts/editContact',
