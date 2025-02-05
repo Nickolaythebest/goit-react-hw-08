@@ -21,7 +21,7 @@ import { goitApi, setAuthHeader } from "./auth/operations";
 export const fetchContacts = createAsyncThunk('contacts/fetchAllContacts', async (_, thunkAPI) => {
     try {
         const {data} = await goitApi.get('contacts');
-        setAuthHeader(data.token);
+        
         return data;
     } catch (error) {
         console.log('Ошибка при загрузке контактов:', error.response.data);

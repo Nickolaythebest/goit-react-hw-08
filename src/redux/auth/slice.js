@@ -27,6 +27,7 @@ const slice = createSlice({
         })
         .addCase(logoutThunk.fulfilled, () => {
             return initialState;
+            
         })
         .addCase(refreshThunk.fulfilled, (state, action) => {
             state.user.name = action.payload.name;
