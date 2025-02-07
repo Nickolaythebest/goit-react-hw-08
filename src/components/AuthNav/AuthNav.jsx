@@ -23,7 +23,7 @@ function AuthNav() {
             '&:hover': {
                 backgroundColor: '#1976d2', // Цвет фона при наведении (синий)
                 color: 'white', }}} 
-        component={Link} to='/registration'>Registration</Button>
+        component={Link} to='/register'>Registration</Button>
         </>
     )
     

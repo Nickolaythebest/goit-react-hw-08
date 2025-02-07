@@ -1,8 +1,11 @@
 import { Button } from "@mui/material";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 
 function Navigation() {
+    const isLoggedIn = useSelector(selectIsLoggedIn);
     return (
         <>
         <Button 
@@ -15,7 +18,7 @@ function Navigation() {
                 backgroundColor: '#1976d2', // Цвет фона при наведении (синий)
                 color: 'white', }}} 
         component={Link} to='/'>Home</Button>
-        <Button 
+        {isLoggedIn && <Button 
         fullWidth 
         variant="contained" 
         color="info" 
@@ -25,7 +28,7 @@ function Navigation() {
                 backgroundColor: '#1976d2', // Цвет фона при наведении (синий)
                 color: 'white', }}}  
         component={Link} 
-        to='/contacts'>Contacts</Button>
+        to='/contacts'>Contacts</Button>}
         </>
     )
 }
