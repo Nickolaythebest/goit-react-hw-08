@@ -29,7 +29,7 @@ function UserMenu() {
             '&:hover': {
                 backgroundColor: '#1976d2', // Цвет фона при наведении (синий)
                 color: 'white', }}} 
-        component={Link} to='/login'
+        component={Link} to='/'
         onClick={() => dispatch(logoutThunk())}>Logout</Button>
         </Box>
 
