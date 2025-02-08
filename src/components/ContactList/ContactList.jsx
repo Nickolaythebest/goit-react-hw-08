@@ -5,7 +5,7 @@ import s from './ContactList.module.css'
 import { selectFilteredContacts, selectIsError, selectIsLoading } from '../../redux/contactsSlice.js';
 /*import { selectFilter } from '../../redux/filtersSlice.js';*/
 import { useEffect } from 'react';
-import { fetchContacts } from '../../redux/contactsOps.js';
+import { fetchContacts } from '../../redux/contacts/operations.js';
 import Loader from '../Loader/Loader.jsx'
 import  ErrorMessage  from '../ErrorMessage/ErrorMessage.jsx';
 
