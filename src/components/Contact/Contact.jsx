@@ -6,10 +6,10 @@ import { useDispatch } from 'react-redux';
 import { FaUserEdit } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
 
-import { deleteContact } from '../../redux/contactsOps';
-import {editContactThunk} from '../../redux/contactsOps'
+import { deleteContact } from '../../redux/contacts/operations';
+import {editContactThunk} from '../../redux/contacts/operations'
 
-const Contact = ({name, number, id, isCompleted, isFavorite}) => {
+const Contact = ({name, number, id, isFavorite}) => {
     const dispatch = useDispatch()
      
     return (

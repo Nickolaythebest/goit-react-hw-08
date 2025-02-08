@@ -5,7 +5,7 @@ import { useId } from "react";
 import { useDispatch } from 'react-redux';
 import * as Yup from "yup";
 
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
 
 const FeedbackSchema = Yup.object().shape({
     username: Yup.string().min(3, "Too Short!").max(20, "Too Long!").required("Required"),
