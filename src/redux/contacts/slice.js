@@ -1,5 +1,5 @@
 import { createSlice } from  '@reduxjs/toolkit'
-import { addContact, deleteContact, editContactThunk, fetchContacts, toggleContactThunk, toggleFavoriteThunk } from './contactsOps';
+import { addContact, deleteContact, editContactThunk, fetchContacts, toggleContactThunk, toggleFavoriteThunk, logoutThunk } from '../contacts/operations';
 
 
 const initialState = {
@@ -51,6 +51,10 @@ const slice = createSlice({
             if(item){
                 item.isFavorite = action.payload.isFavorite;
             }
+            
+        })
+        .addCase(logoutThunk.fulfilled, () => {
+            return initialState;
             
         })
     },

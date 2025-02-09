@@ -2,6 +2,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { goitApi } from "../auth/operations";
 
+export const clearAuthHeader = () => {
+  goitApi.defaults.headers.common.Authorization = ''
+};
+
 export const fetchContacts = createAsyncThunk('contacts/fetchAllContacts', async (_, thunkAPI) => {
     try {
         const {data} = await goitApi.get('contacts');
@@ -72,3 +76,14 @@ export const toggleFavoriteThunk = createAsyncThunk(
       }
     }
   );
+  export const logoutThunk = createAsyncThunk('auth/logout', async (__, thunkApi) => {
+    try {
+       await goitApi.post('/users/logout');
+      
+      clearAuthHeader();
+    } catch (error) {
+      console.log('Ошибка при загрузке контактов:', error.response?.data);
+      return thunkApi.rejectWithValue(error.message)
+    }
+  });
+  
